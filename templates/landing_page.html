@@ -1,0 +1,357 @@
+{% extends 'index.html' %}
+
+{% block styles %}
+<style>
+.logo {
+    width: 500px;
+    max-width:100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    position: absolute;
+    top: 220px;
+    z-index: 80;
+}
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 280px;
+    left: 600px;
+    color: white;
+    z-index: 1000;
+}
+.large-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 1rem;
+
+}
+.small-content-text {
+    line-height: 28px;
+    font-size: 1.3rem;
+}
+
+
+video.middle {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 20px;
+    left: 0;
+    z-index: 1;
+    opacity: .5;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+}
+
+.background-vortex {
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 0 !important;
+}
+
+.col-1 {
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+}
+.col-2 {
+    width: 400px;
+    height: 400px;
+    z-index: 1100;
+    color: white;
+    margin-left: 150px;
+    z-index: 2;
+}
+.logo-wrapper {
+    width: 400px;
+}
+.home-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 320px;
+}
+.hidden {
+    display: none;
+}
+.button-bar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+}
+.button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    text-decoration: none;
+}
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div id="stg-logo-container">
+    <img id="stg-logo" src="{{ url_for('static', filename='img/stg_logo.png') }}" alt="">
+    <a href="{{ url_for('home') }}" class="button mt-15">Enter</a>
+</div>
+
+<video id="background-video" autoplay muted loop class="middle">
+    <source src="{{ url_for('static', filename='img/coin_video.mp4') }}" type="video/mp4">
+</video>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    function rotateCoin() {
+        coin = document.getElementById("coin")
+        coin.classList.toggle('rotate');
+    }
+    rotateCoin()
+</script>
+{% endblock scripts %}
+
+
+
+
+
+
+
+
+
+
+
+<!-- CARD ROW 1 -->
+<div class="card-row">
+    <!-- Montessori Blockchain Technologies -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/blockchain.jpeg') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Montessori Blockchain Technologies</h3>
+            <p>Amplify Your Life Through Blockchain Technology Solutions.</p>
+        </div>
+        <div class="card-footer">
+            <a href="https://web.connectunited.com/video/connect-presentation?r=068589&utm_video=connect-presentation&utm_source=direct-share&utm_campaign=connect-presentation&utm_medium=video" class="button" target="_blank">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Blockchain Simplified: Earn Rewards -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/learn_blockchain.webp') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Blockchain Simplified: Earn Rewards</h3>
+            <p>
+                Easily deploy a blockchain node on your favorite blockchain and earn Bitcoin-like rewards without the technical barriers.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://web.connectunited.com/video/what-is-a-node?r=075864&utm_video=what-is-a-node&utm_source=direct-share&utm_campaign=what-is-a-node&utm_medium=video" class="button" target="_blank">Start Earning</a>
+        </div>
+    </div>
+
+    <!-- REVO Rideshare is a Blockchain Solution -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/revo.jpg') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>REVO Rideshare is a Blockchain Solution</h3>
+            <p>
+                Sign up for free at <a href="">Montessori Blockchain Technologies.</a>
+                <br><br>
+                Click the link below for your private invite to download the app and 
+                begin earning.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://revoride.com/register.php?ref=awyyofek" target="_blank" class="button">Get your invite</a>
+        </div>
+    </div>
+</div>
+
+<!-- CARD ROW 2 -->
+<div class="card-row">
+    <!-- Traditional Finance (TradFi) and DeFi Blockchain Solutions -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/tradfi_defi.jpg') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Traditional Finance (TradFi) and DeFi Blockchain Solutions</h3>
+            <p>
+                Switch is a bridge and guide between the worlds of Traditional Finance (TradFi) 
+                and DeFi. 
+            </p>
+            <p>
+                We are using the existing rails and our team’s knowledge of TradFi 
+                while pushing the envelope as we move towards DeFi as a community and an industry.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://web.connectunited.com/video/switch-cell-towers?r=075864&utm_video=switch-cell-towers&utm_source=direct-share&utm_campaign=switch-node-explainer&utm_medium=video" target="_blank" class="button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Element digitizes gold, silver, and rare earth minerals so we never have to mine them at all. -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/element.png') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Element digitizes gold, silver, and rare earth minerals so we never have to mine them at all.</h3>
+            <p>
+                No mining means we leave precious metals where they are and where they belong.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://web.connectunited.com/video/element-share?r=075864&utm_video=element-share&utm_source=direct-share&utm_campaign=element-explainer&utm_medium=video" target="_blank" class="button">Learn more</a>
+        </div>
+    </div>
+
+    <!-- Grow United Blockchain -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/grow_investment.webp') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Grow United Blockchain</h3>
+            <p>
+                Knowing with certainty where your food comes from.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://web.connectunited.com/video/grow-explainer?r=075864&utm_video=grow-explainer&utm_source=direct-share&utm_campaign=grow-explainer&utm_medium=video" target="_blank" class="button">Learn more</a>
+        </div>
+    </div>
+</div>
+
+<!-- CARD ROW 3 -->
+<div class="card-row">
+    <!-- Secure your medical records through Galvan BlockChain -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/galvan.png') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Secure your medical records through Galvan BlockChain</h3>
+            <p>
+                At Galvan, we aspire for you to take ownership of your health and wellness through 
+                an ecosystem that encourages physical stamina, affirms mental wellness, and informs 
+                you about ways to care for yourself and others.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://web.connectunited.com/video/galvan-adam?r=075864&utm_video=galvan-adam&utm_source=direct-share&utm_campaign=galvan-dr-adam-sharp-interview&utm_medium=video" target="_blank" class="button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Introducing The First Privacy Focused Video Conferencing That Pays You -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/secure_meet-1.jpg') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Introducing The First Privacy Focused Video Conferencing That Pays You</h3>
+            <p>SecurMeet 'SecurFive' Rewards Plan</p>
+            <p>
+                Earn weekly and automatically by simply sharing with your team, friends, and 
+                business associates! Feel good that you are providing them exclusive access 
+                to the world’s best privacy conferencing platform to give them the assurance 
+                they need that their business is secure.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://mysecurmeet.com/?sponsor=hrhhouseofalkebulan" target="_blank" class="button">Learn more</a>
+        </div>
+    </div>
+
+    <!-- FX Prime Brokerage -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/Deutsche-Bank.webp') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>FX Prime Brokerage</h3>
+            <p>
+                FX Prime Brokerage (FXPB) enables clients to transact foreign exchange 
+                across an array of dealers utilising Deutsche Bank credit lines to maintain 
+                anonymity, maximise operational and margin efficiency and reduce transactional costs.
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://corporates.db.com/solutions/investment-bank-solutions/Foreign-exchange/fx-prime-brokerage?fbclid=IwAR20oUDqXYyEJ40S5gEfW9qWzMRLzP7Ze1S1GijrWEoSWD0LquYoaZgAf0A#" target="_blank" class="button">Learn more</a>
+        </div>
+    </div>
+</div>
+
+<!-- CARD ROW 4 -->
+<div class="card-row">
+    <!-- Build Repositories Of Lawful Assets backed by EGOLD & BTC -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/xchain.jpg') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>Build Repositories of Lawful Assets backed by EGOLD & BTC</h3>
+            <p>
+                The proposed blockchain EFT asset backed by EGOLD, recorded on the BTC ledger, 
+                presents an innovative solution to leverage EGOLD for margin trading on the 
+                Duetcshe Bank FXPrime terminal.  
+            </p>
+
+            <span>HOACOIN</span>
+            <img src="{{ url_for('static', filename='img/HOACOIN.png') }}" alt="" style="width: 15px; height: 15px;">
+        </div>
+        <div class="card-footer">
+            <a href="https://xchain.io/tx/3f7447158df2a730c125a2d8b9d54d5befb34586a4643187e184bbf63a5103ab" target="_blank" class="button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- LEGACY MINISTRY & BOARD OF TRUSTEES -->
+    <div class="card">
+        <div class="card-image">
+            <img src="{{ url_for('static', filename='img/board.jpg') }}" alt="Financial Services">
+        </div>
+        <div class="card-content">
+            <h3>LEGACY MINISTRY & BOARD OF TRUSTEES</h3>
+            <p>
+                A Ministerial “SUPERPAC” global network of FBO 508(c)(1)(A) 
+                non-profit organazations established in treaty with alignment to 
+                HRH House of Alkebulan IGO Private Charity 
+            </p>
+        </div>
+        <div class="card-footer">
+            <a href="https://mansamusaali.com/" target="_blank" class="button">Learn more</a>
+        </div>
+    </div>
+</div>

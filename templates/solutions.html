@@ -1,0 +1,301 @@
+{% extends 'index.html' %}
+
+{% block styles %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#fff;
+    background-image: none;
+    overflow-x: hidden;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 50px;
+    position: abolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    min-height: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+    background-color: #fff;
+}
+
+.card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-content {
+    padding: 15px;
+    position: relative;
+    margin-bottom: 20px !important;
+}
+
+.card-footer {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    position: absolute;
+    bottom: 0;
+}
+
+h3 {
+    margin-top: -10px;
+}
+
+.small-title {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    letter-spacing: .2rem;
+}
+
+.large-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.sub-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#grid {
+    margin: 0 auto !important;
+    height: 100%; 
+    width: 100% !important; 
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 5;
+}
+
+.col-1,
+.col-2,
+.col-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+</style>
+{% endblock styles %}
+
+
+{% block content %}
+    <div class="content-container">
+        <div class="sub-header">
+            <div class="small-title">BLOCKCHAIN SOLUTIONS</div>
+            <div class="large-title">
+                Below are links to some of the blockchain solutions we offer. 
+            </div>
+        </div>
+        <center>
+            <div id="grid">
+                <div class="col-1">
+                    <!-- Montessori Blockchain Technologies -->
+                    <div class="card" style="height: 350px; text-align: left;">
+                        <div class="card-image">
+                            <img src="{{ url_for('static', filename='img/blockchain.jpeg') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>Montessori Blockchain Technologies</h3>
+                            <p>Amplify Your Life Through Blockchain Technology Solutions.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://web.connectunited.com/video/connect-presentation?r=068589&utm_video=connect-presentation&utm_source=direct-share&utm_campaign=connect-presentation&utm_medium=video" class="button" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    
+
+                    <!-- REVO Rideshare is a Blockchain Solution -->
+                    <div class="card" style="text-align: left;">
+                        <div class="card-image" style="height: 190px;">
+                            <img src="{{ url_for('static', filename='img/revo.jpg') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>REVO Rideshare is a Blockchain Solution</h3>
+                            <p>
+                                Sign up for free at <a href="">Montessori Blockchain Technologies.</a>
+                                <br><br>
+                                Click the link below for your private invite to download the app and 
+                                begin earning.
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-footer">
+                            <a href="https://revoride.com/register.php?ref=awyyofek" target="_blank" class="button">Get your invite</a>
+                        </div>
+                    </div>
+
+                    <!-- Element digitizes gold, silver, and rare earth minerals so we never have to mine them at all. -->
+                    <div class="card" style="text-align: left;">
+                        <div class="card-image">
+                            <img src="{{ url_for('static', filename='img/element.png') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>Element digitizes gold, silver, and rare earth minerals so we never have to mine them at all.</h3>
+                            <p>
+                                No mining means we leave precious metals where they are and where they belong.
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-footer">
+                            <a href="https://web.connectunited.com/video/element-share?r=075864&utm_video=element-share&utm_source=direct-share&utm_campaign=element-explainer&utm_medium=video" target="_blank" class="button">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-2">
+                    <!-- Blockchain Simplified: Earn Rewards -->
+                    <div class="card" style="text-align: left;">
+                        <div class="card-image" style="height: 185px;">
+                            <img src="{{ url_for('static', filename='img/learn_blockchain.webp') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>Blockchain Simplified: Earn Rewards</h3>
+                            <p>
+                                Easily deploy a blockchain node on your favorite blockchain and earn Bitcoin-like rewards without the technical barriers.
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-footer">
+                            <a href="https://web.connectunited.com/video/what-is-a-node?r=075864&utm_video=what-is-a-node&utm_source=direct-share&utm_campaign=what-is-a-node&utm_medium=video" class="button" target="_blank">Start Earning</a>
+                        </div>
+                    </div>
+
+                
+
+                    <!-- Traditional Finance (TradFi) and DeFi Blockchain Solutions -->
+                    <div class="card" style="text-align: left;">
+                        <div class="card-image">
+                            <img src="{{ url_for('static', filename='img/tradfi_defi.jpg') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>Traditional Finance (TradFi) and DeFi Blockchain Solutions</h3>
+                            <p>
+                                Switch is a bridge and guide between the worlds of Traditional Finance (TradFi) 
+                                and DeFi. 
+                            </p>
+                            <p>
+                                We are using the existing rails and our team’s knowledge of TradFi 
+                                while pushing the envelope as we move towards DeFi as a community and an industry.
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-footer">
+                            <a href="https://web.connectunited.com/video/switch-cell-towers?r=075864&utm_video=switch-cell-towers&utm_source=direct-share&utm_campaign=switch-node-explainer&utm_medium=video" target="_blank" class="button">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <!-- Grow United Blockchain -->
+                    <div class="card" style="text-align: left;">
+                        <div class="card-image">
+                            <img src="{{ url_for('static', filename='img/grow_investment.webp') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>Grow United Blockchain</h3>
+                            <p>
+                                Knowing with certainty where your food comes from.
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-footer">
+                            <a href="https://web.connectunited.com/video/grow-explainer?r=075864&utm_video=grow-explainer&utm_source=direct-share&utm_campaign=grow-explainer&utm_medium=video" target="_blank" class="button">Learn more</a>
+                        </div>
+                    </div>
+
+                    <!-- Build Repositories Of Lawful Assets backed by EGOLD & BTC -->
+                    <div class="card" style="text-align: left;">
+                        <div class="card-image">
+                            <img src="{{ url_for('static', filename='img/xchain.jpg') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>Build Repositories of Lawful Assets backed by EGOLD & BTC</h3>
+                            <p>
+                                The proposed blockchain FTF asset backed by EGOLD, recorded on the BTC ledger, 
+                                presents an innovative solution to leverage EGOLD for margin trading on the 
+                                Duetcshe Bank FXPrime terminal.  
+                            </p>
+
+                            <span>HOACOIN</span>
+                            <img src="{{ url_for('static', filename='img/HOACOIN.png') }}" alt="" style="width: 15px; height: 15px;">
+                        </div>
+                        <br>
+                        <div class="card-footer">
+                            <a href="https://xchain.io/tx/3f7447158df2a730c125a2d8b9d54d5befb34586a4643187e184bbf63a5103ab" target="_blank" class="button">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- LEGACY MINISTRY & BOARD OF TRUSTEES -->
+                    <div class="card" style="text-align: left;">
+                        <div class="card-image">
+                            <img src="{{ url_for('static', filename='img/board.jpg') }}" alt="Financial Services">
+                        </div>
+                        <div class="card-content">
+                            <h3>LEGACY MINISTRY & BOARD OF TRUSTEES</h3>
+                            <p>
+                                A Ministerial “SUPERPAC” global network of FBO 508(c)(1)(A) 
+                                non-profit organazations established in treaty with alignment to 
+                                HRH House of Alkebulan IGO Private Charity 
+                            </p>
+                        </div>
+                        <br>
+                        <div class="card-footer">
+                            <a href="https://mansamusaali.com/" target="_blank" class="button">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+{% endblock content %}
+
+
+{% block footer %}
+    <div class="footer">
+        <div class="footer-text">
+            Copyright © 2020 Silverback Trust Group - All Rights Reserved.
+        </div>
+    </div>
+{% endblock footer %}
+
+
+{% block scripts %}
+<script>
+    
+</script>
+{% endblock scripts %}

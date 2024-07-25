@@ -1,0 +1,325 @@
+{% extends 'index.html' %}
+
+{% block styles %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#fff;
+    background-image: none;
+    overflow-x: hidden;
+}
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-left: 20px;
+    width: 100%;
+}
+.col-1 {
+    width: 400px;
+    height: 400px;
+}
+.col-2 {
+    width: 600px;
+    height: 400px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-input {
+    height: 30px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: .8em !important;
+    color: #5a5a5a !important;
+    margin-top: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-textarea {
+    height: 130px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: .8em !important;
+    color: #5a5a5a !important;
+    margin-top: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-checkbox {
+    margin-right: 10px !important;
+}
+
+.form-label {
+    font-size: .8em !important;
+    font-weight: 650;
+    color: #5a5a5a;
+}
+
+.footer {
+    background-color: hsla(0, 0%, 0%, 100);
+    color: #fff;
+    padding: 1rem;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+{% endblock styles %}
+
+
+{% block content %}
+    <div class="content-container">
+        <div class="col-1">
+            <h4>Contact Us</h4>
+        </div>
+
+        <div class="col-2">
+            
+            <form action="/contact" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control form-input" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="text" class="form-control form-input" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Phone</label>
+                    <input type="text" class="form-control form-input" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Address</label>
+                    <input type="text" class="form-control form-input" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">I'm interested in</label>
+                    <textarea type="text" class="form-control form-textarea" id="intrest" name="intrest" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Other Notes</label>
+                    <textarea type="text" class="form-control form-textarea" id="notes" name="notes" required></textarea>
+                </div>
+                <div class="form-group flex-row">
+                    <input type="checkbox" class="form-control checkbox form-checkbox" id="notes" name="notes" required>
+                    <label for="name">HRH House of Allebulan</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="base-btn">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block footer %}
+<div class="footer">
+    <div class="footer-text">
+        Copyright © 2020 Silverback Trust Group - All Rights Reserved.
+    </div>
+</div>
+{% endblock footer %}
+
+
+{% block scripts %}{% endblock scripts %}
+
+<!-- TEMP CODE -->
+{% extends 'index.html' %}
+
+{% block styles %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#fff;
+    background-image: none;
+    overflow-x: hidden;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+}
+
+h3 {
+    margin-top: -10px;
+}
+
+.small-title {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    letter-spacing: .2rem;
+}
+.large-title {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.sub-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.col-1 {
+    width: 400px;
+    height: 400px;
+}
+.col-2 {
+    width: 600px;
+    height: 400px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-input {
+    height: 30px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: .8em !important;
+    color: #5a5a5a !important;
+    margin-top: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-textarea {
+    height: 130px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-size: .8em !important;
+    color: #5a5a5a !important;
+    margin-top: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-checkbox {
+    margin-right: 10px !important;
+}
+
+.form-label {
+    font-size: .8em !important;
+    font-weight: 650;
+    color: #5a5a5a;
+}
+</style>
+{% endblock styles %}
+
+
+{% block content %}
+    <div class="content-container">
+        <div class="sub-header">
+            <div class="small-title">CONTACT US</div>
+            <div class="large-title">
+                Fill out the form and we will be in touch with you. 
+            </div>
+        </div>
+
+        <!-- ROW -->
+        <div class="row">
+            <div class="col-1">
+
+            </div>
+            <div class="col-2">
+                <form action="/contact" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control form-input" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <input type="text" class="form-control form-input" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Phone</label>
+                        <input type="text" class="form-control form-input" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Address</label>
+                        <input type="text" class="form-control form-input" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">I'm interested in</label>
+                        <textarea type="text" class="form-control form-textarea" id="intrest" name="intrest" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Other Notes</label>
+                        <textarea type="text" class="form-control form-textarea" id="notes" name="notes" required></textarea>
+                    </div>
+                    <div class="form-group flex-row">
+                        <input type="checkbox" class="form-control checkbox form-checkbox" id="notes" name="notes" required>
+                        <label for="name">HRH House of Allebulan</label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="base-btn">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+{% endblock content %}
+
+
+{% block footer %}
+    <div class="footer">
+        <div class="footer-text">
+            Copyright © 2020 Silverback Trust Group - All Rights Reserved.
+        </div>
+    </div>
+{% endblock footer %}
+
+
+{% block scripts %}
+<script>
+    
+</script>
+{% endblock scripts %}

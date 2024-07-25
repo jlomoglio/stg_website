@@ -1,0 +1,332 @@
+{% extends 'index.html' %}
+
+{% block styles %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#fff;
+    background-image: none;
+    overflow-x: hidden;
+}
+
+#mission-statement {
+    display: none;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    
+    width: 104vw !important;
+    min-height: 450px;
+    max-height: 450px;
+    
+    padding: 50px;
+    padding-top: 100px;
+    margin: 0;
+    background-color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
+    
+    position: absolute;
+    left: -30px;
+    right: -30px;
+    
+    background-image: url(/static/img/lost-hope.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 1400px;
+    background-position: center center;
+
+    z-index: 1;
+}
+
+#mobile-mission-statement {
+    display: none;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    
+    width: 100vw !important;
+    min-height: 200px;
+    max-height: 200px;
+    
+    padding: 20px;
+    padding-top: 50px;
+    margin: 0;
+    background-color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
+    
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+    
+    background-image: url(/static/img/lost-hope.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 1400px;
+    background-position: center center;
+}
+
+#mobile-mission-text {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    background-image: url(/static/img/mission-text-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 1400px;
+    background-position: center center;
+    color: #fff;
+    max-height: 400px !important;
+    position: absolute;
+    top: 270px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.col-text {
+    width: 780px;
+    height: 250px;
+    text-align: left;
+}
+
+.small-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px #000;
+}
+
+.mobile-small-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px #000;
+}
+
+#mission-box {
+    height: 200px;
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    letter-spacing: .2rem;
+    color: #fff;
+    font-family: "IBM Plex Mono", monospace;
+    position: absolute;
+    left: 20%;
+    right: 20% !important;
+    top: 175px;
+    text-shadow: 1px 1px #000;
+}
+
+#mobile-mission-text {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    background-image: url(/static/img/mission-text-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 1400px;
+    background-position: center center;
+    color: #fff;
+    margin-top: -20px;
+}
+
+#mission-content-wrapper {
+    width: 104vw !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding: 30px;
+    display: block;
+    position: absolute;
+    top: 480px;
+    background-color: #white;
+}
+
+#mobile-mission-content-wrapper {
+    width: 104vw !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding: 30px;
+    display: block;
+    position: absolute;
+    top: 480px;
+}
+
+.text-bar {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    letter-spacing: .2rem;
+    font-weight: 800;
+    z-index: 100 !important;
+}
+
+.mobile-text-bar {
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    color: #000000;
+    letter-spacing: .2rem;
+    font-weight: 800;
+    z-index: 100 !important;
+}
+</style>
+{% endblock styles %}
+
+
+{% block content %}
+<!-- Mission Statement ################################## -->
+<!-- Desktop -->
+<div id="mission-statement">
+    <div class="col-text">
+        <div class="small-title mt-[20px] absolute left-[20%]">OUR MISSION</div>
+        <div id="mission-box"></div>
+    </div>
+</div>
+
+<!-- mobile -->
+<div id="mobile-mission-statement">
+    <div class="col-text">
+        <div class="mobile-small-title top-[70px] absolute left-[25%] right-[20%]">OUR MISSION</div>
+    </div>
+</div>
+
+<!-- Mobile Mission Text -->
+<div id="mobile-mission-text">
+    <p>
+        Our mission is to provide Communities and Families 
+        affected by disasters to overcome poverty.
+    </p>
+    <br>
+    <p>
+        Support through Montessori Programs that offer food, shelter, 
+        Employment opportunities, Healthcare, Education, Empowerment, and Life skills.
+    </p>
+</div>
+<!-- End Mission Statement ############################### --> 
+
+
+<!-- Mission Content Wrapper ############################# -->
+<!-- Desktop -->
+<div id="mission-content-wrapper">
+    <!-- Text Bar -->
+    <div class="text-bar">
+        NATURALIZATION - JURISDICTION - STATUS - REMITTANCES
+    </div>
+</div>
+
+<!-- Mobile -->
+<div id="mobile-mission-content-wrapper">
+    <!-- Text Bar -->
+    <div id="mobile-text-bar" class="mobile-text-bar">
+        <center>
+        NATURALIZATION - JURISDICTION 
+        <br><br>
+        STATUS - REMITTANCES
+        </center>
+    </div>
+</div>
+<!-- End Mission Content Wrapper ######################### -->
+{% endblock content %}
+
+
+{% block footer %}
+    <div class="footer hidden">
+        <div class="footer-text">
+            Copyright © 2020 - 2024 Silverback Trust Group - All Rights Reserved.
+        </div>
+    </div>
+{% endblock footer %}
+
+
+{% block scripts %}
+<script>
+    let delay = n => new Promise(r => setTimeout(r, n))
+
+    async function typeWriter(div, txt) {
+        for (let char of txt) {
+            div.innerHTML += char;
+            await delay(60);
+        }
+        console.log('TEST') // This works. Its called after the text is typed.
+    }
+
+    var text = `
+        Our mission is to provide Communities and Families 
+        affected by disasters to overcome poverty. 
+        
+        Support through Montessori Programs that offer food, shelter, 
+        Employment opportunities, Healthcare, Education, Empowerment, and Life skills.
+    `
+
+    typeWriter(document.querySelector('#mission-box'), text)
+
+
+    // Show the content based on the user's device type
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) &&!window.MSStream;
+
+    
+    if (isAndroid) {
+        document.getElementById('mobile-mission-text').style.fontSize = '1.1rem';
+        document.getElementById('mobile-text-bar').style.fontSize = '.8rem';
+    }
+    
+
+    // Mobile devices
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.getElementById('mission-statement').style.display = 'none';
+        document.getElementById('mobile-mission-statement').style.display = 'block';
+
+        document.getElementById('mobile-mission-text').style.display = 'block';
+
+        document.getElementById('mobile-mission-content-wrapper').style.display = 'block';
+        document.getElementById('mission-content-wrapper').style.display = 'none';
+
+        document.getElementById('mobile-mission-cards-container').style.display = 'block';
+        document.getElementById('mission-cards-container').style.display = 'none';
+        
+        document.getElementById('footer').style.display = 'none';
+        document.getElementById('mobile-footer').style.display = 'block';
+    }
+
+    // DESKTOP AND TABLET
+    else {
+        document.getElementById('mission-statement').style.display = 'block';
+        document.getElementById('mobile-mission-statement').style.display = 'none';
+
+        document.getElementById('mobile-mission-text').style.display = 'none';
+
+        document.getElementById('mobile-mission-content-wrapper').style.display = 'none';
+        document.getElementById('mission-content-wrapper').style.display = 'block';
+
+        document.getElementById('mobile-mission-cards-container').style.display = 'none';
+        document.getElementById('mission-cards-container').style.display = 'block';
+       
+        document.getElementById('footer').style.display = 'block';
+        document.getElementById('mobile-footer').style.display = 'none';
+    }
+
+</script>
+{% endblock scripts %}

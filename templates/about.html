@@ -1,0 +1,612 @@
+{% extends 'index.html' %}
+
+{% block styles %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#fff;
+    background-image: none;
+}
+.header {
+    display: block !important;
+}   
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 30px;
+    padding-right: 0px;
+    width: auto;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    color: #5a5a5a;
+    margin-top: 50px;
+    padding: 40px;
+    width: 100%;
+}
+
+.img-reset {
+    width: 450px;
+    height: 450px;
+    border: 1px solid white;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    -moz-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+}
+
+.mobile-img-reset {
+    width: 100%;
+    margin-top: 50px;
+    height: auto;
+    border: 1px solid white;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    -moz-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+}
+
+.moat-img {
+    width: 500px;
+    height: 480px;
+    border: 1px solid white;
+    margin-top: -130px;
+
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    -moz-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+
+}
+
+.small-title {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    letter-spacing: .2rem;
+}
+
+.large-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.mt-28 {
+    margin-top: 28px !important;
+}
+
+
+.col-1 {
+    flex-direction: column;
+    width: 500px !important;
+}
+.col-1 > p {
+    margin-right: 40px;
+}
+.hidden {
+    display: none;
+}
+.content-tagline-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    height: 100px !important;
+    background-color: hsl(0, 0%, 0%);
+    background-image: url('static/img/cosmic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 25%;
+}
+
+.mobile-content-tagline-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 120%;
+    margin-left: -10%;
+    height: 200px !important;
+    background-color: hsl(0, 0%, 0%);
+    background-image: url('static/img/cosmic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 25%;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.tagline {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+}
+.video-container {
+    width: 100%;
+    height: 800px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 30px;
+    width: 100%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    height: 475px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.card .container {
+    padding: 15px;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.cross-the-moat-container {
+    padding: 60px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mobile-cross-the-moat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-col {
+    width: 550px;
+    height: auto;
+    margin-right: 100px;
+    margin-top: -154px;
+}
+.right_col {
+    height: auto;
+}
+
+p {
+    text-align: left;
+}
+
+
+.cross-the-moat-header {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    letter-spacing: .5rem;
+    text-align: left;
+}
+
+
+.about-content-wrapper {
+    margin-right: -20px;
+}
+
+
+.beyond-belief-container {
+    width: 100%;
+    height: 900px;
+    background-color: rgb(0, 0, 0);
+}
+
+
+.beyond-belief-inner-container-text {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    letter-spacing: .5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px;
+    background: transparent;
+    z-index: 3 !important;
+}
+
+
+.mobile-beyond-belief-container {
+    width: 104vw;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    left: 0;
+    right: 0;
+    padding-bottom: 20px;
+}
+
+
+.mobile-beyond-belief-inner-container-text {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    letter-spacing: .5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 0px;
+    background: transparent;
+    z-index: 3 !important;
+}
+
+.mobile-about-content-wrapper {
+    padding: 20px;
+}
+
+.mobile-nav-menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    padding-top: 120px;
+}
+
+.mobile-nav-menu > div {
+    width: 100%;
+    height: 70px;
+    border-bottom: 0px solid #ccc;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+</style>
+{% endblock styles %}
+
+
+{% block content %}
+    <!-- ABOUT -->
+    <div id="about-content-wrapper" class="about-content-wrapper">
+        <!-- About Us -->
+        <div class="content-container">
+            <!-- About Us - Content -->
+            <div class="col-1">
+                <div class="small-title">ABOUT US</div>
+                <div class="large-title">
+                    We are a group of individuals who are passionate about finance and commerce. 
+                </div>
+                <p style="font-size: 1rem; line-height: 22px; display: none;">
+                    We are Bloomberg Registered with our Market Identifier Code (MIC) UBEC, 
+                    we bring Remittances for Monetary Sovereignty, Governance, And Control Over 
+                    Quantum Fintech Digital Currency Solutions in compliance to all Legal 
+                    Jurisdictions via ISO 10383, ISO 20022, ISO 27001, ISO 17442 and ISO 10728.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px;">
+                    Drawing inspiration from our creators and ancestors, we strive to pave the way 
+                    forward for asset protection to our beneficiaries in this world “Global Reset”. 
+                    We see ourselves as a temple of innovation, ready to follow the footsteps of 
+                    those who have come before us while forging new paths to prosperity.
+                </p>
+                
+                <p style="font-size: 1rem; line-height: 22px;">
+                    “Cross The Moat” to align with us as we explore uncharted territories, forge 
+                    strategic treaties, and redefine the meaning of financial empowerment for autonomy.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px;">
+                    Together, let's unlock the full potential of Naturalization, Jurisdiction, Status, 
+                    and Remittances for generational wealth.
+                </p>
+
+                <p style="font-size: 1rem; line-height: 22px;">
+                    Utilizing the principles of Montessori education, we strive to create nurturing 
+                    environments that foster self-reliance, self-confidence, and empathy. We believe 
+                    that by imparting practical skills and knowledge, understanding, wisdom, mastery, 
+                    and monetization individuals can better provide for themselves and their families, 
+                    thereby breaking the cycle of poverty.
+                </p>
+            </div>
+
+            <!-- About Image -->
+            <div class="col-2">
+                <img class="img-reset" src="{{ url_for('static', filename='img/vault.webp') }}">
+            </div>
+        </div>
+
+        <!-- Banner: Blood Ties -->
+        <div class="content-tagline-container">
+            <span class="tagline animate-tagline letter">
+                “Blood ties come and go, the divine bond of your cosmic kin is eternal.”
+            </span>
+        </div>
+
+        <!-- Cross the Moat Content -->
+        <div class="cross-the-moat-container">
+            <div class="left-col">
+                <img class="moat-img" style="width: 500px; height: 530px;" src="{{ url_for('static', filename='img/Discipline-Your-Life.jpg') }}" alt="">
+            </div>
+            <div class="right-col">
+                <div style="width: 100%; height: 24px;"></div>
+
+                <div class="cross-the-moat-header">
+                    <span class="small-title ">CROSS THE MOAT</span>
+                </div>
+                
+                <p style="font-size: 1rem; line-height: 22px; width: 550px;">
+                    Living life through purpose for autonomy requires a combination of balance, discipline, 
+                    consistency, and patience in order to achieve knowledge, understanding, wisdom, mastery, 
+                    and eventually monetization.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px; width: 550px;">
+                    Balance is essential in ensuring that all aspects of life are given deguate of irk, 
+                    relations, Th,i maht, in dnig ahal gronoius Without balance, it is easy to become 
+                    overwhelmed or burnt out, which can hinder progress towards autonomy.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px; width: 550px;">
+                    Discipline is required to stay true to one's purpose and goals, even when faced with 
+                    challenges or setbacks. It involves setting boundaries, prioritizing tasks, 
+                    and making sacrifices in order to stay on track. Without discipline, it is easy 
+                    to become distracted or to lose motivation, which can derail efforts towards autonomy.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px; width: 550px;">
+                    Consistency is key in building momentum and making progress towards autonomy. It involves 
+                    developing daily habits and routines that support the pursuit of one's purpose. By consistently 
+                    taking action towards goals, progress is made over time, leading to a sense of accomplishment and fulfillment.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px; width: 550px;">
+                    Patience is necessary in navigating the ups and downs that come with pursuing autonomy. It involves 
+                    understanding that progress takes time and that setbacks are a natural part of the journey. Without 
+                    patience, it is easy to become discouraged or give up when faced with challenges, hindering the 
+                    achievement of autonomy.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px; width: 550px;">
+                    Through a combination of balance, discipline, consistency, and patience, individuals can develop 
+                    knowledge, understanding, and wisdom in their chosen field. This opens the door to mastery, 
+                    as expertise is gained through years of dedicated practice and learning. Eventually, this 
+                    mastery can be monetized, allowing individuals to create a sustainable and fulfilling life 
+                    based on their passion and purpose.
+                </p>
+                <p style="font-size: 1rem; line-height: 22px; width: 550px;">
+                    In summary, living life through purpose for autonomy requires a commitment to balance, discipline, 
+                    consistency, and patience in order to achieve knowledge, understanding, wisdom, mastery, and 
+                    monetization. By harnessing these qualities, individuals can create a life that is truly 
+                    their own, driven by their passion and goals.
+                </p>
+            </div>
+        </div>
+
+        <!-- Beyond belief is Certainty Content -->
+        <div class="beyond-belief-container">
+            <div class="beyond-belief-inner-container-text mt-28 pt-[20px]">
+                BEYOND BELIEF IS CERTAINTY
+            </div>
+            <video 
+                autoplay 
+                muted 
+                loop 
+                style="
+                    height: 680px;
+                    width: 100%;
+                    position: relative;
+                    margin-top: 30px;
+                    z-index: 0;
+                "
+            >
+                <source src="{{ url_for('static', filename='img/beyond_belief.mov') }}">
+            </video>
+            <div class="beyond-belief-inner-container-text">
+                CONTROL EVERYTHING. OWN NOTHING
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- ABOUT / MOBILE -->
+    <div id="mobile-about-content-wrapper" class="mobile-about-content-wrapper hidden">
+        <img class="mobile-img-reset" src="{{ url_for('static', filename='img/vault.webp') }}">
+
+        <div class="small-title">ABOUT US</div>
+
+        <div class="large-title">
+            We are a group of individuals who are passionate about finance and commerce. 
+        </div>
+        
+        <p style="font-size: 1rem; line-height: 22px;" class="mt-[20px]">
+            Drawing inspiration from our creators and ancestors, we strive to pave the way 
+            forward for asset protection to our beneficiaries in this world “Global Reset”. 
+            We see ourselves as a temple of innovation, ready to follow the footsteps of 
+            those who have come before us while forging new paths to prosperity.
+        </p>
+        
+        <p style="font-size: 1rem; line-height: 22px;" class="mt-[10px]">
+            “Cross The Moat” to align with us as we explore uncharted territories, forge 
+            strategic treaties, and redefine the meaning of financial empowerment for autonomy.
+        </p>
+        <p style="font-size: 1rem; line-height: 22px;" class="mt-[10px]">
+            Together, let's unlock the full potential of Naturalization, Jurisdiction, Status, 
+            and Remittances for generational wealth.
+        </p>
+
+        <p style="font-size: 1rem; line-height: 22px;" class="mt-[10px]">
+            Utilizing the principles of Montessori education, we strive to create nurturing 
+            environments that foster self-reliance, self-confidence, and empathy. We believe 
+            that by imparting practical skills and knowledge, understanding, wisdom, mastery, 
+            and monetization individuals can better provide for themselves and their families, 
+            thereby breaking the cycle of poverty.
+        </p>
+
+        <!-- Banner: Blood Ties -->
+        <div class="mobile-content-tagline-container text-center mb-[180px]">
+            <span class="mobile-tagline text-white text-[26px] font-[600] p-[30px] pl-[30px]">
+                “Blood ties come and go, the divine bond of your cosmic kin is eternal.”
+            </span>
+        </div>
+
+        <!-- Cross the Moat Content -->
+        <div class="mobile-cross-the-moat-container">
+            <img class="moat-img" style="width: 100%; h-[200px] mt-[100px]" src="{{ url_for('static', filename='img/Discipline-Your-Life.jpg') }}" alt="">
+            
+            <div style="width: 100%; height: 24px;"></div>
+
+            <div class="cross-the-moat-header">
+                <span class="small-title ">CROSS THE MOAT</span>
+            </div>
+            
+            <p style="font-size: 1rem; line-height: 22px; margin-bottom: 15px;">
+                Living life through purpose for autonomy requires a combination of balance, discipline, 
+                consistency, and patience in order to achieve knowledge, understanding, wisdom, mastery, 
+                and eventually monetization.
+            </p>
+            <p style="font-size: 1rem; line-height: 22px; margin-bottom: 15px;">
+                Balance is essential in ensuring that all aspects of life are given deguate of irk, 
+                relations, Th,i maht, in dnig ahal gronoius Without balance, it is easy to become 
+                overwhelmed or burnt out, which can hinder progress towards autonomy.
+            </p>
+            <p style="font-size: 1rem; line-height: 22px; margin-bottom: 15px;">
+                Discipline is required to stay true to one's purpose and goals, even when faced with 
+                challenges or setbacks. It involves setting boundaries, prioritizing tasks, 
+                and making sacrifices in order to stay on track. Without discipline, it is easy 
+                to become distracted or to lose motivation, which can derail efforts towards autonomy.
+            </p>
+            <p style="font-size: 1rem; line-height: 22px; margin-bottom: 15px;">
+                Consistency is key in building momentum and making progress towards autonomy. It involves 
+                developing daily habits and routines that support the pursuit of one's purpose. By consistently 
+                taking action towards goals, progress is made over time, leading to a sense of accomplishment and fulfillment.
+            </p>
+            <p style="font-size: 1rem; line-height: 22px; margin-bottom: 15px;">
+                Patience is necessary in navigating the ups and downs that come with pursuing autonomy. It involves 
+                understanding that progress takes time and that setbacks are a natural part of the journey. Without 
+                patience, it is easy to become discouraged or give up when faced with challenges, hindering the 
+                achievement of autonomy.
+            </p>
+            <p style="font-size: 1rem; line-height: 22px; margin-bottom: 15px;">
+                Through a combination of balance, discipline, consistency, and patience, individuals can develop 
+                knowledge, understanding, and wisdom in their chosen field. This opens the door to mastery, 
+                as expertise is gained through years of dedicated practice and learning. Eventually, this 
+                mastery can be monetized, allowing individuals to create a sustainable and fulfilling life 
+                based on their passion and purpose.
+            </p>
+            <p style="font-size: 1rem; line-height: 22px; margin-bottom: 15px;">
+                In summary, living life through purpose for autonomy requires a commitment to balance, discipline, 
+                consistency, and patience in order to achieve knowledge, understanding, wisdom, mastery, and 
+                monetization. By harnessing these qualities, individuals can create a life that is truly 
+                their own, driven by their passion and goals.
+            </p>
+            
+        </div>
+    </div>
+    <!-- Beyond belief is Certainty Content -->
+    <div id="mobile-beyond-belief-container" class="mobile-beyond-belief-container">
+        <div class="mobile-beyond-belief-inner-container-text mt-28 pt-[20px]">
+            BEYOND BELIEF IS CERTAINTY
+        </div>
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            style="
+                height: 380px;
+                width: 100%;
+                position: relative;
+                right: 0;
+                left: 0;
+                z-index: 10;
+            "
+        >
+            <source src="{{ url_for('static', filename='img/beyond_belief.mov') }}">
+        </video>
+        <div class="beyond-belief-inner-container-text !mb-[30px]">
+            CONTROL EVERYTHING. <br> OWN NOTHING
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block footer %}
+    <div id="footer" class="footer hidden">
+        <div class="footer-text text-center">
+            Copyright © 2020 - 2024 Silverback Trust Group - All Rights Reserved.
+        </div>
+    </div>
+
+    <div id="mobile-footer" class="footer !w-[104vw] hidden">
+        <div class="footer-text text-center !p-[40px]">
+            Copyright © 2020 Silverback Trust Group. All Rights Reserved.
+        </div>
+    </div>
+{% endblock footer %}
+
+
+{% block scripts %}
+<script>
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.animate-tagline');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({loop: true})
+    .add({
+        targets: '.animate-tagline .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: (el, i) => 70*i
+    }).add({
+        targets: '.animate-tagline',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
+
+    // Show the content based on the user's device type
+    // Mobile devices
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.getElementById('about-content-wrapper').style.display = 'none';
+        document.getElementById('mobile-about-content-wrapper').style.display = 'block';
+        document.getElementById('footer').style.display = 'none';
+        document.getElementById('mobile-footer').style.display = 'block';
+        document.getElementById('mobile-beyond-belief-container').style.display = 'block';
+    }
+
+    // DESKTOP AND TABLET
+    else {
+        document.getElementById('about-content-wrapper').style.display = 'block';
+        document.getElementById('mobile-about-content-wrapper').style.display = 'none';
+        document.getElementById('footer').style.display = 'block';
+        document.getElementById('mobile-footer').style.display = 'none';
+        document.getElementById('mobile-beyond-belief-container').style.display = 'none';
+    }
+</script>
+{% endblock scripts %}
