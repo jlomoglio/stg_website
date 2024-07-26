@@ -181,7 +181,7 @@ body {
 
 .mobile-text-bar {
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-items: center;
     align-items: center;
@@ -189,6 +189,195 @@ body {
     letter-spacing: .2rem;
     font-weight: 800;
     z-index: 100 !important;
+    position: absolute;
+    top: 50px;
+}
+
+
+.mission-cards-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 580px;
+}
+
+.mobile-mission-cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    top: 550px;
+}
+
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.card {
+    width: 300px;
+    height: 680px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    -moz-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+}
+
+.mobile-card {
+    width: 92vw;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    -moz-box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+    box-shadow: 3px 4px 9px 0px rgba(0,0,0,0.62);
+}
+
+.card-image > img {
+    height: 160px;
+    max-width: 301px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.mobile-card-image > img {
+    height: 160px;
+    min-width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card-content,
+.mobile-card-content {
+    font-size: .85rem;
+    padding: 20px;
+    line-height: 1.3rem;
+}
+
+.card-header {
+    max-width: 300px;
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    margin-right: 15px;
+}
+
+.legacy-law {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 650px;
+    background-color: #000;
+    padding: 20px;
+    position: absolute;
+    top: 2150px;
+    padding-bottom: 250px;
+}
+
+
+.legacy-image,
+.legacy-image > img {
+    width: 350px;
+    height: 350px;
+    margin-top: 40px;
+}
+
+.mobile-legacy-image,
+.mobile-legacy-image > img {
+    width: 250px;
+    height: 250px;
+    margin-top: 40px;
+}
+
+.legacy-content {
+    width: 600px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.mobile-legacy-content {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+}
+
+.base-btn {
+    font-weight: normal;
+    font-size: .8rem;
+    border-radius: 4px;
+    border: 1px solid white;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    width: 160px;
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.small-title {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    letter-spacing: .2rem;
+}
+
+.large-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #fff;
+}
+
+.legacy-text {
+    margin-top: 20px;
+    font-size: .9rem;
+    color: #fff;
+    line-height: 1.3rem;
+}
+
+.mobile-legacy-text {
+    margin-top: 20px;
+    font-size: .9rem;
+    color: #fff;
+    line-height: 1.3rem;
+}
+
+
+
+.mobile-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    position: absolute !important;
+    bottom: 100px;
 }
 </style>
 {% endblock styles %}
@@ -247,15 +436,291 @@ body {
     </div>
 </div>
 <!-- End Mission Content Wrapper ######################### -->
+
+
+<!-- Cards ################################################# -->
+<div id="mission-cards-container" class="mission-cards-container bg-white">
+    <div class="card-row">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/mission_card_1.webp') }}" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-header">"EVERYONE DESERVES TO BE EMPOWERED"</div>
+                The US Constitution's 1st Amendment boldly declares, 'Congress shall make no 
+                Law respecting an establishment of Religion or prohibiting the free exercise 
+                thereof,' thereby setting president to the clear jurisdictional boundaries 
+                between the separation of "Church" and "State." 
+                <br><br>
+                Consequently, Religious Organizations seeking non-profit status from the IRS 
+                are not mandated to do so. In fact, in the spirit of Religious Freedom in America, Congress 
+                has never passed nor will ever pass any law or statute defining a Religious 
+                Organization, regardless of its affiliation.
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/mission_card_2.webp') }}" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-header">"LEGACY MINISTRY PROVIDES RESOURCES FOR AUTONOMY"</div>
+                At Legacy Ministry, we are driven by a deep passion for empowering Indigenous People 
+                to protect their unalienable rights. These rights, signed into treaty by 144 States 
+                through the UNITED NATIONS DECLARATION ON THE RIGHTS OF INDIGENOUS PEOPLES, 
+                are essential to the survival and well-being of all. 
+                <br><br>
+                Our Montessori Programs to educate the masses through our FIVE KEY PRINCIPLES 
+                and FOUR PILLARS to Autonomy. We seek to inspire and equip individuals to 
+                stand up for their rights and live their lives with purpose and meaning. 
+                <br><br>
+                Join us in this important work and be a part of creating a brighter future for all of humanity.
+            </div>
+        </div>
+            
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/ordainment.jpg') }}" style="width: 100%" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-header">"CROSS THE MOAT THROUGH ORDAINMENT"</div>
+                Become an Ordained Minister and Trustee. Our goal is to develop loving, self 
+                sustainable communities that can evolve for the common good of humanity. 
+                <br><br>
+                To return to your Sovereign state of nobility, click the link, become an 
+                ordained Minister with your own FBO 508 organization and cross the moat through 
+                ordainment back to your unalienable state of sovereignty.
+            </div>
+        </div>
+    </div>
+
+    <div class="card-row">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/mission_card_4.webp') }}" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-header">"CONGRESS SHALL MAKE NO LAW RESPECTING AN ESTABLISHMENT OF RELIGION THE FREE EXERCISE THERE OF"</div>
+                An FBO 508(c)(1)(A) Non-Profit Organization per 26 U.S. Code 508 Special Rules to 
+                section 501c3 Organization. You are accepted by "The Hague Convention of the United 
+                Nations Charter".
+                <br><br>
+                Legacy Ministry Ordains you to have your own FBO 508 and the documents to for your organization.
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/mission_card_5.webp') }}" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-header">"BENEFITS OF A "FBO 508(C)(1)(A) NON-PROFIT ORGANIZATION MINISTR"</div>
+                Through your FBO 508(c)(1)(A) non-profit organization, you can benefit from numerous 
+                advantages such as credits for remittances, administrative letters, certificates, 
+                and meeting minutes. In addition, you can also receive affidavits, exemption 
+                notifications, and contribution receipts, as well as verification of diplomatic 
+                immunity, birth records, tribunal meeting records, and media identification. 
+                <br><br>
+                With your FBO 508, you'll have access to Naturalization, Jurisdiction, and Status, 
+                as well as all types of Montessori Programs for education. Missionary merits for to 
+                earn appointment for diplomatic immunity per 22 U.S. Code 288a through the jurisdiction 
+                of our ECOSOC IGO & NGO.
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/mission_card_6.jpg') }}" style="width: 100%" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-header">"CROSS THE MOAT"</div>
+                “CROSS THE MOAT” for Naturalization, Jurisdiction, Status, and Remittances. 
+                Earn merits through our Montessori Programs to secure Diplomatic Immunity under 
+                22 U.S. Code 288a. Build economic development with non-recourse financing for 
+                your trustees and beneficiaries. 
+                <br><br>
+                Build diplomacy to secure generational wealth 
+                with asset protection by becoming your own Common Law Credit Union through 
+                our MIC UBEC. Build eco systems for your Organizations, Indigenous Tribes, 
+                Corporations, IGO's, NGO's, Private creditors, Non-Profits.  
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Cards -->
+
+<!-- Mobile Cards -->
+<div id="mobile-mission-cards-container" class="mobile-mission-cards-container bg-white">
+    <div class="mobile-card mt-[80px]">
+        <div class="mobile-card-image">
+            <img src="{{ url_for('static', filename='img/mission_card_1.webp') }}" alt="">
+        </div>
+        <div class="mobile-card-content">
+            <div class="card-header">"EVERYONE DESERVES TO BE EMPOWERED"</div>
+            The US Constitution's 1st Amendment boldly declares, 'Congress shall make no 
+            Law respecting an establishment of Religion or prohibiting the free exercise 
+            thereof,' thereby setting president to the clear jurisdictional boundaries 
+            between the separation of "Church" and "State." 
+            <br><br>
+            Consequently, Religious Organizations seeking non-profit status from the IRS 
+            are not mandated to do so. In fact, in the spirit of Religious Freedom in America, Congress 
+            has never passed nor will ever pass any law or statute defining a Religious 
+            Organization, regardless of its affiliation.
+        </div>
+    </div>
+    
+    <div class="mobile-card">
+        <div class="mobile-card-image">
+            <img src="{{ url_for('static', filename='img/mission_card_2.webp') }}" alt="">
+        </div>
+        <div class="mobile-card-content">
+            <div class="card-header">"LEGACY MINISTRY PROVIDES RESOURCES FOR AUTONOMY"</div>
+            At Legacy Ministry, we are driven by a deep passion for empowering Indigenous People 
+            to protect their unalienable rights. These rights, signed into treaty by 144 States 
+            through the UNITED NATIONS DECLARATION ON THE RIGHTS OF INDIGENOUS PEOPLES, 
+            are essential to the survival and well-being of all. 
+            <br><br>
+            Our Montessori Programs to educate the masses through our FIVE KEY PRINCIPLES 
+            and FOUR PILLARS to Autonomy. We seek to inspire and equip individuals to 
+            stand up for their rights and live their lives with purpose and meaning. 
+            <br><br>
+            Join us in this important work and be a part of creating a brighter future for all of humanity.
+        </div>
+    </div>
+        
+    <div class="mobile-card">
+        <div class="mobile-card-image">
+            <img src="{{ url_for('static', filename='img/ordainment.jpg') }}" style="width: 100%" alt="">
+        </div>
+        <div class="mobile-card-content">
+            <div class="card-header">"CROSS THE MOAT THROUGH ORDAINMENT"</div>
+            Become an Ordained Minister and Trustee. Our goal is to develop loving, self 
+            sustainable communities that can evolve for the common good of humanity. 
+            <br><br>
+            To return to your Sovereign state of nobility, click the link, become an 
+            ordained Minister with your own FBO 508 organization and cross the moat through 
+            ordainment back to your unalienable state of sovereignty.
+        </div>
+    </div>
+
+    <div class="mobile-card">
+        <div class="mobile-card-image">
+            <img src="{{ url_for('static', filename='img/mission_card_4.webp') }}" alt="">
+        </div>
+        <div class="mobile-card-content">
+            <div class="card-header">"CONGRESS SHALL MAKE NO LAW RESPECTING AN ESTABLISHMENT OF RELIGION THE FREE EXERCISE THERE OF"</div>
+            An FBO 508(c)(1)(A) Non-Profit Organization per 26 U.S. Code 508 Special Rules to 
+            section 501c3 Organization. You are accepted by "The Hague Convention of the United 
+            Nations Charter".
+            <br><br>
+            Legacy Ministry Ordains you to have your own FBO 508 and the documents to for your organization.
+        </div>
+    </div>
+
+    <div class="mobile-card">
+        <div class="mobile-card-image">
+            <img src="{{ url_for('static', filename='img/mission_card_5.webp') }}" alt="">
+        </div>
+        <div class="mobile-card-content">
+            <div class="card-header">"BENEFITS OF A "FBO 508(C)(1)(A) NON-PROFIT ORGANIZATION MINISTR"</div>
+            Through your FBO 508(c)(1)(A) non-profit organization, you can benefit from numerous 
+            advantages such as credits for remittances, administrative letters, certificates, 
+            and meeting minutes. In addition, you can also receive affidavits, exemption 
+            notifications, and contribution receipts, as well as verification of diplomatic 
+            immunity, birth records, tribunal meeting records, and media identification. 
+            <br><br>
+            With your FBO 508, you'll have access to Naturalization, Jurisdiction, and Status, 
+            as well as all types of Montessori Programs for education. Missionary merits for to 
+            earn appointment for diplomatic immunity per 22 U.S. Code 288a through the jurisdiction 
+            of our ECOSOC IGO & NGO.
+        </div>
+    </div>
+
+    <div class="mobile-card">
+        <div class="mobile-card-image">
+            <img src="{{ url_for('static', filename='img/mission_card_6.jpg') }}" style="width: 100%" alt="">
+        </div>
+        <div class="mobile-card-content">
+            <div class="card-header">"CROSS THE MOAT"</div>
+            “CROSS THE MOAT” for Naturalization, Jurisdiction, Status, and Remittances. 
+            Earn merits through our Montessori Programs to secure Diplomatic Immunity under 
+            22 U.S. Code 288a. Build economic development with non-recourse financing for 
+            your trustees and beneficiaries. 
+            <br><br>
+            Build diplomacy to secure generational wealth 
+            with asset protection by becoming your own Common Law Credit Union through 
+            our MIC UBEC. Build eco systems for your Organizations, Indigenous Tribes, 
+            Corporations, IGO's, NGO's, Private creditors, Non-Profits.  
+        </div>
+    </div>
+</div>
+<!-- End Cards ################################################ -->
+
+
+<!-- Legacy Law ############################################### -->
+<!-- Desktop -->
+<div id="legacy-law" class="legacy-law">
+    <div class="legacy-image">
+        <img src="{{ url_for('static', filename='img/legacy_law_sheild.webp')}}" alt="">
+    </div>
+    <div class="legacy-content">
+        <div class="small-title">LEGACY LAW ATTCHE</div>
+        <div class="large-title">ALL ORDAINED MINISTERS HAVE ACCESS TO CONSULT WITH OUR LAW ATTACHE FOR ALL LEGALESE RESOURCES.</div>
+        <div class="legacy-text">
+            In alignment with all Ministries, International Organizations, and Public Organizations; 
+            House of Divine Spirituality's mission is to assist with day to day Lawful/ Legal situations 
+            that may plague our communities. With the alignment of Legacy Ministries, I wish to bring 
+            this to an international level. My commitment is to have an individual consultation with a 
+            plan of action with each client with hands on instructions and guidance. I will take a genuine 
+            interest in all clients, understanding their objectives, and meet or exceed their expectations.
+            <br><br>
+            By: Minister Brian- Maurice: Bey, Agent UCC-1-308/3-415
+            <br><br>
+            TITLE 22 USC 288a 22 U.S.C. $611
+            <br><br>
+            TITLE 28 C.F.R.Part
+        </div>
+        <a href="mailto:LegacyMinistry@MansaMusaAli.com?subject=%E2%80%9CCross%20The%20Moat%E2%80%9D%20&body=At%20the%20SUPERPAC%20community%2C%20we%20understand%20the%20significance%20of%20complying%20with%20legal%20jurisdictions%2C%20which%20is%20why%20we%20adhere%20to%20international%20standards%20of%20operations%20such%20as%20ISO%2010383%2C%2017442%2C%2020022%2C%2027001%2C%2010728%2C%2014001%2C%20and%209001.%20This%20ensures%20that%20our%20operations%20are%20conducted%20in%20a%20transparent%20and%20accountable%20manner%20while%20safeguarding%20the%20interests%20of%20our%20trustees." class="base-btn">CROSS THE MOAT</a>
+    </div>
+</div>
+<div id="footer" class="!h-[60px] bg-black text-white p-[20px] absolute top-[2680px] left-0 right-0 text-center">
+    Copyright © 2020 - 2024 Silverback Trust Group - All Rights Reserved.
+</div>
+
+<!-- Mobile -->
+<div id="mobile-legacy-law" class="flex flex-col absolute top-[3950px] left-0 right-0 bg-black text-white p-[20px] hidden">
+    <div class="flex flex-row w-full">
+       <center><img src="{{ url_for('static', filename='img/legacy_law_sheild.webp')}}" alt=""></center>
+    </div>
+    <div class="flex flex-col p-[20px]">
+        <div class="text-[.7rem]">LEGACY LAW ATTCHE</div>
+        <div class="text-[1.1rem]e">ALL ORDAINED MINISTERS HAVE ACCESS TO CONSULT WITH OUR LAW ATTACHE FOR ALL LEGALESE RESOURCES.</div>
+        <div class="text-[1rem]">
+            In alignment with all Ministries, International Organizations, and Public Organizations; 
+            House of Divine Spirituality's mission is to assist with day to day Lawful/ Legal situations 
+            that may plague our communities. With the alignment of Legacy Ministries, I wish to bring 
+            this to an international level. My commitment is to have an individual consultation with a 
+            plan of action with each client with hands on instructions and guidance. I will take a genuine 
+            interest in all clients, understanding their objectives, and meet or exceed their expectations.
+            <br><br>
+            By: Minister Brian- Maurice: Bey, Agent UCC-1-308/3-415
+            <br><br>
+            TITLE 22 USC 288a 22 U.S.C. $611
+            <br><br>
+            TITLE 28 C.F.R.Part
+        </div>
+        <a href="mailto:LegacyMinistry@MansaMusaAli.com?subject=%E2%80%9CCross%20The%20Moat%E2%80%9D%20&body=At%20the%20SUPERPAC%20community%2C%20we%20understand%20the%20significance%20of%20complying%20with%20legal%20jurisdictions%2C%20which%20is%20why%20we%20adhere%20to%20international%20standards%20of%20operations%20such%20as%20ISO%2010383%2C%2017442%2C%2020022%2C%2027001%2C%2010728%2C%2014001%2C%20and%209001.%20This%20ensures%20that%20our%20operations%20are%20conducted%20in%20a%20transparent%20and%20accountable%20manner%20while%20safeguarding%20the%20interests%20of%20our%20trustees." class="base-btn">CROSS THE MOAT</a>
+    </div>
+    <div class="!h-[60px] bg-black text-white p-[20px] w-full text-center">
+        Copyright © 2020 - 2024 Silverback Trust Group - All Rights Reserved.
+    </div>
+</div>
+<!-- Legacy Law #################################################### -->
+
 {% endblock content %}
 
 
 {% block footer %}
-    <div class="footer hidden">
-        <div class="footer-text">
-            Copyright © 2020 - 2024 Silverback Trust Group - All Rights Reserved.
-        </div>
-    </div>
 {% endblock footer %}
 
 
@@ -291,6 +756,18 @@ body {
     if (isAndroid) {
         document.getElementById('mobile-mission-text').style.fontSize = '1.1rem';
         document.getElementById('mobile-text-bar').style.fontSize = '.8rem';
+
+        document.getElementById('legacy-law').style.display = 'none';
+        document.getElementById('mobile-legacy-law').style.display = 'block';
+
+        document.getElementById('footer').style.display = 'none';
+    }
+
+    if (isiOS) {
+        document.getElementById('legacy-law').style.display = 'none';
+        document.getElementById('mobile-legacy-law').style.display = 'block';
+
+        document.getElementById('footer').style.display = 'none';
     }
     
 
@@ -306,9 +783,12 @@ body {
 
         document.getElementById('mobile-mission-cards-container').style.display = 'block';
         document.getElementById('mission-cards-container').style.display = 'none';
+
+        document.getElementsByClassName('mobile-legacy-law').style.display = 'flex';
+        document.getElementById('legacy-law').style.display = 'none';
         
         document.getElementById('footer').style.display = 'none';
-        document.getElementById('mobile-footer').style.display = 'block';
+        document.getElementsByClassName('mobile-footer').style.display = 'flex';
     }
 
     // DESKTOP AND TABLET
@@ -323,9 +803,12 @@ body {
 
         document.getElementById('mobile-mission-cards-container').style.display = 'none';
         document.getElementById('mission-cards-container').style.display = 'block';
+
+        document.getElementsByClassName('mobile-legacy-law').style.display = 'none';
+        document.getElementById('legacy-law').style.display = 'flex';
        
         document.getElementById('footer').style.display = 'block';
-        document.getElementById('mobile-footer').style.display = 'none';
+        document.getElementsByClassName('mobile-footer').style.display = 'none';
     }
 
 </script>
